@@ -1,25 +1,25 @@
-# vue-big-tree
+# vue-larger-tree
 
 A tree component that can load large amounts of data(Based on element-ui).
 
 ## Install
 
 ```bash
-$ npm i vue-big-tree -S
+$ npm i vue-larger-tree -S
 ```
 
 ```bash
-$ yarn add vue-big-tree -S
+$ yarn add vue-larger-tree -S
 ```
 
 ### Use
 
 ```js
 import Vue from "vue";
-import VueBigTree from "vue-big-tree";
-import "vue-big-tree/dist/index.css";
+import VueLargerTree from "vue-larger-tree";
+import "vue-larger-tree/dist/index.css";
 
-Vue.use(VueBigTree);
+Vue.use(VueLargerTree);
 ```
 
 ### Props
@@ -28,7 +28,7 @@ Type: `Array`<br>
 Required: `true`<br>
 origin data.
 ```html
-<VueGigTree :list="[]">
+<VueLargerTree :list="[]">
 ```
 
 #### node-key
@@ -36,7 +36,7 @@ Type: `String`<br>
 Required: `true`<br>
 Unique key for every data.
 ```html
-<VueGigTree :list="[]" node-key="categoryCode">
+<VueLargerTree :list="[]" node-key="categoryCode">
 ```
 
 #### height
@@ -45,7 +45,7 @@ Required: `false`<br>
 Default: `480`<br>
 component height.
 ```html
-<VueGigTree :list="[]" node-key="categoryCode" height="500">
+<VueLargerTree :list="[]" node-key="categoryCode" height="500">
 ```
 
 #### show-checkbox
@@ -54,15 +54,43 @@ Required: `false`<br>
 Default: `false`<br>
 show component checkbox.
 ```html
-<VueGigTree :list="[]" node-key="categoryCode" height="500" show-checkbox>
+<VueLargerTree :list="[]" node-key="categoryCode" height="500" show-checkbox>
 ```
+
+#### defaultExpandAll
+Type: `Boolean`<br>
+Required: `false`<br>
+Default: `false`<br>
+expand all node.
+```html
+<VueLargerTree :list="[]" defaultExpandAll>
+```
+
+#### defaultExpandedKeys
+Type: `Array`<br>
+Required: `false`<br>
+Default: `[]`<br>
+default expanded keys list.
+```html
+<VueLargerTree :list="[]" :defaultExpandedKeys="[]">
+```
+
+#### props
+Type: `Object`<br>
+Required: `false`<br>
+Default: `{children:'children',label:'categoryName'}`<br>
+keyword of attribute value. like element-ui.
+```html
+<VueLargerTree :list="[]" :props="{}">
+```
+
 
 #### check
 Type: `Function`<br>
 Required: `false`<br>
 like element-ui.tree.check
 ```html
-<VueGigTree @check="handleCheck">
+<VueLargerTree @check="handleCheck">
 ```
 
 
@@ -71,7 +99,7 @@ Type: `Function`<br>
 Required: `false`<br>
 like element-ui.tree.node-click
 ```html
-<VueGigTree @node-click="handleNodeClick">
+<VueLargerTree @node-click="handleNodeClick">
 ```
 
 #### filterNodeMethod
@@ -79,7 +107,7 @@ Type: `Function`<br>
 Required: `false`<br>
 like element-ui.tree.filterNodeMethod
 ```html
-<VueGigTree :filterNodeMethod="handleFilterMethods">
+<VueLargerTree :filterNodeMethod="handleFilterMethods">
 ```
 
 ### example
@@ -87,7 +115,7 @@ like element-ui.tree.filterNodeMethod
 <template>
   <div id="app">
     <el-input v-model="searchValue" />
-    <VueGigTree
+    <VueLargerTree
       ref="tree"
       :list="list"
       node-key="categoryCode"
@@ -100,7 +128,7 @@ like element-ui.tree.filterNodeMethod
       <template v-slot="{ data }">
         <span>{{ data.title }}</span>
       </template>
-    </VueGigTree>
+    </VueLargerTree>
   </div>
 </template>
 

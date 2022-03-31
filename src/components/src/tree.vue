@@ -34,7 +34,7 @@ const ITEM_HEIGHT = 26; // 暂时写死,不扩展
  * 过滤
  */
 export default {
-  name: 'VueGigTree',
+  name: 'VueLargerTree',
 
   props: {
     // 数据源

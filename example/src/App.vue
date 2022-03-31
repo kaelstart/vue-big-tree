@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-input v-model="searchValue" />
-    <VueGigTree
+    <VueLargerTree
       ref="tree"
       :list="list"
       node-key="categoryCode"
@@ -14,7 +14,7 @@
       <template v-slot="{ data }">
         <span>{{ data.title }}</span>
       </template>
-    </VueGigTree>
+    </VueLargerTree>
   </div>
 </template>
 

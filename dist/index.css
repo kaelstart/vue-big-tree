@@ -1,0 +1,41 @@
+.pd-tree {
+  background: #fff; }
+  .pd-tree ::-webkit-scrollbar {
+    width: 0; }
+  .pd-tree .pd-tree__empty {
+    position: relative;
+    min-height: 60px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #909399;
+    font-size: 14px;
+    margin-top: 30px; }
+  .pd-tree .pd-tree__node {
+    overflow: auto;
+    position: relative; }
+    .pd-tree .pd-tree__node .pd-tree__node-placeholder {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      z-index: -1; }
+    .pd-tree .pd-tree__node .pd-tree__node-container {
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow: hidden; }
+
+.pd-tree-node .pd-tree-node__content {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  cursor: pointer; }
+  .pd-tree-node .pd-tree-node__content:hover {
+    background: #f5f7fa; }
+  .pd-tree-node .pd-tree-node__content .pd-tree-node__content--active {
+    background: #f5f7fa !important; }
+  .pd-tree-node .pd-tree-node__content .pd-tree-node__content-icon {
+    font-size: 12px;
+    padding: 6px 6px 6px 0;
+    color: #c0c4cc; }
